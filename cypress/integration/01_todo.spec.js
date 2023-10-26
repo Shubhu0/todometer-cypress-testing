@@ -2,6 +2,9 @@
 
 context('Todos', () => {
     it('Adds todos', ()=> {
-        cy.visit("http://localhost:3000")
+        cy.visit(Cypress.env('baseUrl'));
+        cy.clearLocalStorage();
+        
+        cy.getByTestId("todo").should('have.length', 0);
     })
 })
